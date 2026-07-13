@@ -1,0 +1,67 @@
+{
+  "chain_id": 4663,
+  "network": "robinhood",
+  "rpc_url": "https://rpc.mainnet.chain.robinhood.com",
+  "explorer": "https://robinhoodchain.blockscout.com",
+  "safe_owner": "0x5FF989aCB81e612fb54d2BDE9C6334B4C9a8f117",
+  "tvl_note": "~$1 USDG (totalAssets=1000000 with 6 decimals)",
+  "tokens": {
+    "usdg": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+    "hood": "0x0000000000000000000000000000000000000000"
+  },
+  "morpho_vault": {
+    "name": "hoodbet.fun",
+    "address": "0xDF06045aBAE69d6e73a7F0197FED917032d22194",
+    "performance_fee_bps": 5000,
+    "management_fee_apr_bps": 500
+  },
+  "prize_pool": {
+    "draw_period_seconds": 86400,
+    "grand_prize_period_draws": 91,
+    "number_of_tiers": 4,
+    "prize_token": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+    "reserve_shares": 1000000000000000000
+  },
+  "twab_controller": {
+    "period_length": 86400,
+    "period_offset": 0
+  },
+  "rng": {
+    "type": "blockhash-mvp",
+    "production_target": "witnet-randomness-v2",
+    "contract": "HoodRngBlockhash",
+    "notes": "See docs/RNG.md — upgrade before high TVL"
+  },
+  "draw_manager": {
+    "draw_auction_duration": 10800,
+    "draw_auction_target_sale_time": 3600
+  },
+  "hood_points": {
+    "tier_thresholds": ["0", "10000000000000000000000", "100000000000000000000000", "1000000000000000000000000"],
+    "referral_multipliers_bps": [10000, 12500, 15000, 20000]
+  },
+  "virtuals": {
+    "launch_command": "acp agent tokenize --chain-id 4663 --symbol HOOD",
+    "docs": "https://www.virtuals.io/"
+  },
+  "deployed": {
+    "twab_controller": "",
+    "prize_pool": "",
+    "draw_manager": "",
+    "prize_vault_factory": "",
+    "prize_vault": "",
+    "hood_fee_harvester": "",
+    "hood_rng": "",
+    "hood_points_registry": ""
+  },
+  "pt_v5_repos": {
+    "mainnet": "https://github.com/GenerationSoftware/pt-v5-mainnet",
+    "prize_pool": "https://github.com/GenerationSoftware/pt-v5-prize-pool",
+    "vault": "https://github.com/GenerationSoftware/pt-v5-vault",
+    "twab_controller": "https://github.com/GenerationSoftware/pt-v5-twab-controller",
+    "draw_auction": "https://github.com/GenerationSoftware/pt-v5-draw-auction",
+    "tpda_liquidator": "https://github.com/GenerationSoftware/pt-v5-tpda-liquidator",
+    "claimer": "https://github.com/GenerationSoftware/pt-v5-claimer",
+    "subgraph": "https://github.com/GenerationSoftware/pt-v5-subgraph"
+  }
+}
