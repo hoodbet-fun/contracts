@@ -25,6 +25,7 @@ contract HoodFeeHarvester is Ownable {
   event FeesHarvested(uint256 sharesRedeemed, uint256 assetsContributed);
 
   error PrizeVaultNotSet();
+  error ZeroPrizeVault();
   error ZeroShares();
   error AssetMismatch();
 
@@ -40,6 +41,7 @@ contract HoodFeeHarvester is Ownable {
 
   /// @notice One-time wiring after PrizeVault is deployed via PrizeVaultFactory.
   function setPrizeVault(address _prizeVault) external onlyOwner {
+    if (_prizeVault == address(0)) revert ZeroPrizeVault();
     prizeVault = _prizeVault;
     emit PrizeVaultSet(_prizeVault);
   }

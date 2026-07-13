@@ -70,6 +70,12 @@ contract HoodFeeHarvesterTest is Test {
     harvester.setPrizeVault(makeAddr("other"));
   }
 
+  function test_revert_setPrizeVault_zeroAddress() public {
+    vm.prank(safe);
+    vm.expectRevert(HoodFeeHarvester.ZeroPrizeVault.selector);
+    harvester.setPrizeVault(address(0));
+  }
+
   function test_revert_assetMismatch() public {
     MockERC20 other = new MockERC20("OTHER", "OTH", 18);
     MockPrizePool otherPool = new MockPrizePool(address(other));
