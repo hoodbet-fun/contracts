@@ -39,7 +39,7 @@
     "prize_vault_factory": "",
     "prize_vault": "",
     "hood_fee_harvester": "",
-    "hood_rng": "",
+    "hood_rng": "0x8B6EdfeCe14210eCb2A8D28F333D81621103Dd19",
     "hood_points_registry": ""
   }
 }
