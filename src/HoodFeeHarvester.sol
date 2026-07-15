@@ -55,7 +55,8 @@ contract HoodFeeHarvester is Ownable {
 
     assetsContributed = morphoVault.redeem(shares, address(this), address(this));
 
-    asset.forceApprove(address(prizePool), assetsContributed);
+    // PT V5 PrizePool.contributePrizeTokens requires tokens already in the pool (delta balance check).
+    asset.safeTransfer(address(prizePool), assetsContributed);
     prizePool.contributePrizeTokens(prizeVault, assetsContributed);
 
     emit FeesHarvested(shares, assetsContributed);
